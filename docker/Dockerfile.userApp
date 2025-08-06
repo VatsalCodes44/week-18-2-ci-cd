@@ -3,7 +3,7 @@ FROM node:23-alpine
 
 WORKDIR /src/app
 
-COPY package.json package.lock.json turbo.json tsconfig.json ./
+COPY package.json package-lock.json turbo.json tsconfig.json ./
 
 COPY apps ./apps
 
