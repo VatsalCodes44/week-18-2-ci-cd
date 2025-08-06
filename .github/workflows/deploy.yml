@@ -23,7 +23,7 @@ jobs:
               uses: docker/build-push-action@v2
               with:
                 context: .
-                file: ./Docker/Dockerfile.userApp
+                file: ./docker/Dockerfile.userApp
                 push: true
                 tags: vatsalcodes44/mypaytm:latest
 
