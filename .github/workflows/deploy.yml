@@ -26,3 +26,7 @@ jobs:
                 file: ./Docker/Dockerfile.userApp
                 push: true
                 tags: vatsalcodes44/mypaytm:latest
+
+
+
+                
