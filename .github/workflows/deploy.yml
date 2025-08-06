@@ -27,5 +27,19 @@ jobs:
                 push: true
                 tags: vatsalcodes44/mypaytm:latest
 
+            - name: Verify pushed image
+              run: docker pull vatsalcodes44/mypaytm:latest
 
+            - name: Deploy to EC2
+              uses: appleboy/ssh-action@master
+              with: 
+                host: ${{secrets.SSH_HOST}}
+                username: ${{secrets.SSH_USERNAME}}
+                key: ${{secrets.SSH_KEY}}
+                script: |
+                    sudo docker pull vatsalcodes44/mypaytm:latest
+                    sudo docker stop mypaytm || true
+                    sudo docker rm mypaytm || true
+                    sudo docker run -d --name mypaytm -p 3005:3000 vatsalcodes44/mypaytm:latest
+            
 
