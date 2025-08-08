@@ -40,7 +40,7 @@ jobs:
                     sudo docker pull vatsalcodes44/mypaytm:latest
                     sudo docker stop mypaytm || true
                     sudo docker rm mypaytm || true
-                    sudo docker run -d --name mypaytm --network paytm -e ${{secrets.DATABASE_URL}} -p 3005:3000 vatsalcodes44/mypaytm:latest
+                    sudo docker run -d --name mypaytm --network paytm -e ${{secrets.DATABASE_URL}} -e ${{secrets.NEXTAUTH_URL}} -p 3005:3000 vatsalcodes44/mypaytm:latest
                   # add environment variable in docker -e ${{secrets.DATABASE_URL}
                   # add a flag so that it restarts itself
                   # try to deploy it to elastic bean stalk, using it out application will autoscale
