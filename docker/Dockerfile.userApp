@@ -1,10 +1,10 @@
-FROM node:18
+FROM node:20-alpine3.16
 
 
 WORKDIR /src/app
 
 # for the container on the ec2 server
-RUN apk add --no-cache openssl
+RUN apk update && apk add --no-cache openssl
 
 COPY package.json package-lock.json turbo.json tsconfig.json ./
 
