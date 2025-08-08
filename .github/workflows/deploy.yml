@@ -44,3 +44,4 @@ jobs:
                   # add environment variable in docker -e ${{secrets.DATABASE_URL}
                   # add a flag so that it restarts itself
                   # try to deploy it to elastic bean stalk, using it out application will autoscale
+                  
